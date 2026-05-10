@@ -44,6 +44,14 @@ public class SmartPillagerMod {
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::registerAttributes);
 
+        net.minecraftforge.fml.DistExecutor.unsafeRunWhenOn(
+                net.minecraftforge.api.distmarker.Dist.CLIENT,
+                () -> () -> {
+                    modEventBus.addListener(com.smartpillager.client.ClientRendererRegistry::registerRenderers);
+                    modEventBus.addListener(com.smartpillager.client.ClientRendererRegistry::registerLayerDefinitions);
+                }
+        );
+
         MinecraftForge.EVENT_BUS.register(this);
     }
 

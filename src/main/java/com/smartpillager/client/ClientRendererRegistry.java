@@ -32,7 +32,7 @@ public class ClientRendererRegistry {
         event.registerLayerDefinition(SMART_PILLAGER_LAYER, IllagerModel::createBodyLayer);
     }
 
-    public static class SmartPillagerRenderer extends IllagerRenderer<Pillager> {
+    public static class SmartPillagerRenderer extends IllagerRenderer<com.smartpillager.entity.SmartPillagerEntity> {
         private static final ResourceLocation TEXTURE =
                 new ResourceLocation("textures/entity/illager/pillager.png");
 
@@ -42,7 +42,7 @@ public class ClientRendererRegistry {
         }
 
         @Override
-        public ResourceLocation getTextureLocation(Pillager entity) {
+        public ResourceLocation getTextureLocation(com.smartpillager.entity.SmartPillagerEntity entity) {
             return TEXTURE;
         }
     }
